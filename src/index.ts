@@ -4,14 +4,15 @@ export default {
     if (url.pathname === "/.well-known/apple-app-site-association") {
       const aasa = {
         applinks: {
-          apps: [],
           details: [
             {
-              appID: "Z8TVS94HS8.com.dreamix-studio.runtrainer",
-              paths: [
-                "/reset-password/*",
-                "/deeplink=*",
-                ""
+              appIDs: [
+                "Z8TVS94HS8.com.dreamix-studio.runtrainer"
+              ],
+              components: [
+                { "/": "/reset-password/*", "comment": "Matches reset-password paths" },
+                { "/": "/deeplink=*", "comment": "Matches deeplink query style" },
+                { "/": "", "comment": "Matches root path" }
               ]
             }
           ]
